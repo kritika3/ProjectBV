@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+    <div style="background-color: #122b40; color:white; font-size:22px;" class="col-md-7">
+        <b>LOGIN PAGE</b>
+    </div>
+    <div class="form-group col-md-6">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="alert alert-danger"> {{ message }} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label>Username</label></td>
+                <td><input type="text" name="user" placeholder="Username"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password" name="password" placeholder="Enter Password"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">LOGIN</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

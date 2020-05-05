@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Capture</title>
+</head>
+<body>
+{% load webcam %}
+{% url "picture-mgm" object.pk as picmgm %}
+{% url "camera" object.picture as default_image %}
+{% camera  picmgm default_image %}
+</body>
+</html>
